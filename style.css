@@ -1,0 +1,290 @@
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+    margin-top: 0;
+}
+
+html {
+    font-size: 10px;
+    font-family: 'Manrope', sans-serif;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    font-size: 1.3rem;
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: hsl(210, 46%, 95%);
+    color: hsl(214, 17%, 51%);
+}
+
+.attribution {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    text-align: center;
+    padding: 2rem 0;
+}
+
+h1 {
+    color: hsl(217, 19%, 35%);
+    font-size: 2rem;
+}
+
+p {
+    line-height: 1.6;
+}
+
+img {
+    max-width: 100%;
+    height: auto;
+}
+
+
+article {
+    width: 730px;
+    display: flex;
+    flex-direction: row;
+    box-shadow:
+        0 6.7px 5.3px rgba(109, 127, 151, 0.05),
+        0 22.3px 17.9px rgba(109, 127, 151, 0.07),
+        0 10rem 10rem rgba(109, 127, 151, 0.07)
+    ;
+    border-radius: 1rem;
+}
+
+.article-image {
+    width: 41%;
+    border-top-left-radius: 1rem;
+    border-bottom-left-radius: 1rem;
+}
+
+.article-content {
+    width: 59%;
+    background-color: #fff;
+    padding: 4rem;
+    border-top-right-radius: 1rem;
+    border-bottom-right-radius: 1rem;
+}
+
+.article-content p {
+    margin-bottom: 0;
+}
+
+.article-image {
+    background-image: url('./images/drawers.jpg');
+    background-size: cover;
+    background-position: left center;
+    background-repeat: no-repeat;
+}
+
+.author-image {
+    width: 4rem;
+    height: 4rem;
+    border-radius: 50%;
+    overflow: hidden;
+    margin-right: 1.7rem;
+}
+
+.article-footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 2.5rem;
+}
+
+.author-name {
+    margin-bottom: 0;
+    font-weight: 700;
+    color: hsl(217, 19%, 35%);
+}
+
+.article-date {
+    color: hsl(212, 23%, 69%);
+}
+
+.author {
+    display: flex;
+    align-items: center;
+}
+
+.social {
+    width: 3.6rem;
+    height: 3.6rem;
+    border-radius: 50%;
+    background-color: hsl(210, 46%, 95%);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    border: 0;
+    cursor: pointer;
+}
+
+button {
+    outline: 0;
+    transition: background .3s;
+}
+
+.social-popup {
+    position: absolute !important;
+    background-color: hsl(217, 19%, 35%);
+    top: -9rem;
+    left: 50%;
+    transform: translateX(-50%);
+    padding: 1.8rem 3.6rem;
+    border-radius: 1rem;
+    position: relative;
+    visibility: hidden;
+    opacity: 0;
+    transition: opacity .3s;
+    box-shadow: 0 1.2rem 1.5rem rgba(158, 175, 194, .4);
+}
+
+.social-popup::after {
+    content: '';
+    position: absolute;
+    bottom: -1.3rem;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 0;
+    height: 0;
+    border-left: 3rem solid transparent;
+    border-right: 3rem solid transparent;
+    border-top: 3rem solid hsl(217, 19%, 35%);
+}
+
+.social-popup.active {
+    visibility: visible;
+    opacity: 1;
+    transition: opacity .3s;
+    display: flex;
+    align-items: center;
+}
+
+.social-popup p {
+    margin-bottom: 0;
+    color: hsl(212, 23%, 69%);
+    letter-spacing: .5rem;
+    font-size: 1.2rem;
+    display: inline-block;
+    margin-right: 2rem;
+}
+
+.social-popup ul {
+    list-style: none;
+    margin-bottom: 0;
+    margin-block-start: 0;
+    padding-inline-start: 0;
+    display: flex;
+    align-items: center;
+}
+
+.social-popup li {
+    display: inline-block;
+    width: 2rem;
+    margin-right: 1.6rem;
+}
+
+.social-popup li:last-child {
+    margin-right: 0;
+}
+
+.social-popup a {
+    transition: fill .3s;
+    fill: #fff;
+    display: block;
+}
+
+.social-popup a:hover {
+    transition: fill .3s;
+    fill: hsl(212, 23%, 69%);
+}
+
+.social-wrapper {
+    position: relative;
+}
+
+.social.active,
+.social:hover {
+    background-color: hsl(212, 23%, 69%);
+    transition: background .3s;
+}
+
+.social.active svg,
+.social:hover svg {
+    fill: #fff;
+    transition: fill .3s;
+}
+
+.social svg {
+    fill: hsl(214, 17%, 51%);
+    transition: fill .3s;
+}
+
+
+@media only screen and (max-width: 600px) {
+    
+    h1 {
+       font-size: 1.6rem;
+       line-height: 1.5;
+       margin-bottom: 1.2rem;
+    }
+
+    article {
+        flex-direction: column;
+        margin: 0 2.4rem;
+    }
+
+    .article-content,
+    .article-image {
+        width: 100%;
+    }
+
+    .article-image {
+        min-height: 20rem;
+        border-top-left-radius: 1rem;
+        border-top-right-radius: 1rem;
+        border-bottom-left-radius: 0;
+    }
+    
+    .article-content {
+        border-bottom-left-radius: 1rem;
+        border-bottom-right-radius: 1rem;
+        padding: 4.2rem 3.5rem 2rem 3.5rem;
+        position: relative;
+    }
+
+    .social {
+        width: 3.2rem;
+        height: 3.2rem;
+    }
+
+    .social-wrapper {
+        position: unset;
+    }
+
+    .social-popup::after {
+        display: none;
+    }
+
+    .social-popup {
+        top: unset;
+        bottom: 0;
+        width: 100%;
+        border-radius: unset;
+        border-bottom-left-radius: 1rem;
+        border-bottom-right-radius: 1rem;
+        padding: 2.5rem 3.6rem;
+    }
+
+    .article-footer {
+        margin-top: 3.2rem;
+    }
+
+}
